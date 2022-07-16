@@ -13,7 +13,7 @@ function computerPlay(){
 //This function checks either user or computer wins
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
-        return "It's a tie";
+        return "It's a tie, try again!";
     } else if (playerSelection === "rock") {
         if (computerSelection === "paper") {
             computerWin++;
@@ -43,8 +43,6 @@ function playRound(playerSelection, computerSelection){
 
 let computerWin = 0; 
 let userWin = 0;
-const playerSelection = "rock";
-const computerSelection = computerPlay();
 
 function winnerIs(){
     if (userWin > computerWin){
@@ -62,11 +60,11 @@ function game(){
     for (let i = 0; i < 5; i++){
         rounds = (i + 1);
         console.log("Round: " + rounds); 
-        let playerInput = window.prompt("Choose rock, paper or scissors");
-        let computerInput = computerPlay();
+        const playerInput = window.prompt("Choose rock, paper or scissors").toLowerCase();
+        const computerInput = computerPlay();
         console.log("User chose: " + playerInput);
         console.log("Computer chose: " + computerInput);
-        console.log(playRound(playerInput.toLowerCase(), computerInput));
+        console.log(playRound(playerInput, computerInput));
     }
     console.log("The winner is: " + winnerIs());
 }
