@@ -38,11 +38,16 @@ function playRound(playerSelection, computerSelection){
             userWin++;
             return "You have won! Current score: " + userWin;
         }
-    } 
+    } else {
+        alert("Invalid input! Please enter rock, paper or scissors.");
+        rounds += 1;
+        return "Please try again.";
+    }
 }
 
 let computerWin = 0; 
 let userWin = 0;
+let rounds = 0;
 
 function winnerIs(){
     if (userWin > computerWin){
@@ -56,15 +61,21 @@ function winnerIs(){
 
 //main game function
 function game(){
-    let rounds;
     for (let i = 0; i < 5; i++){
         rounds = (i + 1);
-        console.log("Round: " + rounds); 
+        console.log("Round: " + rounds);
         const playerInput = window.prompt("Choose rock, paper or scissors").toLowerCase();
+        if (playerInput === null) {
+            console.log("You've quit the game!");
+            return playerInput;
+        }
         const computerInput = computerPlay();
         console.log("User chose: " + playerInput);
         console.log("Computer chose: " + computerInput);
         console.log(playRound(playerInput, computerInput));
+        if (playerInput === computerInput){
+            i--;
+        }
     }
     console.log("The winner is: " + winnerIs());
 }
