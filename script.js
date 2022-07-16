@@ -55,7 +55,7 @@ function winnerIs(){
     } else if (userWin < computerWin){
         return "Computer has won with total score: " + computerWin;
     } else {
-        return "It's a draw!"
+        return "It's a draw!";
     }
 }
 
