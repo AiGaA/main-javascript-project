@@ -1,0 +1,63 @@
+
+* {
+    background-color: aliceblue;
+    color: rgb(57, 57, 57);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(79, 79, 238);
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 4rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.2);
+}
+
+.results {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.user-score .computer-score {
+    margin-left: .1rem;
+    font-size: 1rem;
+    color: #333; 
+}
+
+.result-selection {
+    opacity: .5;
+    font-size: 2rem;
+}
+
+.choices, .rounds{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-direction: column;
+}
+
